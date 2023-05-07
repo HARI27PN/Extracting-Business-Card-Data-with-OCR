@@ -1,8 +1,9 @@
 # Extracting-Business-Class-Data
 
-Streamlit App Link - link will be posted soon
+Streamlit App Link ⬇️
+link will be posted soon
 
-Refer to the guidelines for the project
+Refer to the guidelines for the project ⬇️
 
 https://drive.google.com/file/d/1Svz1KBeOtSs6UVLAQnX69ga9qBxD9GW3/view?usp=sharing
 
