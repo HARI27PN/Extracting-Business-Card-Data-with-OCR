@@ -6,6 +6,15 @@ st. set_page_config(layout="wide")
 import re
 import pandas as pd
 
+# Add custom CSS to the app
+st.markdown("""
+    <style>
+    body {
+        background-color: #f0f0f0;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 #title
 st.title(":orange[BizCard-Extracting-Business-Card-Data]") 
 st.write(" ")
