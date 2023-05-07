@@ -1,3 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+		body {
+			background-color: #F0F0F0; /* Grey background */
+			font-family: Arial, sans-serif;
+			margin: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #FFF;
+			padding: 20px;
+			text-align: center;
+		}
+
+		nav {
+			background-color: #666;
+			color: #FFF;
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+		}
+
+		nav a {
+			color: #FFF;
+			text-decoration: none;
+			padding: 10px;
+		}
+
+		nav a:hover {
+			background-color: #FFF;
+			color: #333;
+		}
+
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		article {
+			background-color: #FFF;
+			border-radius: 10px;
+			box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+			margin: 10px;
+			padding: 20px;
+			width: 300px;
+		}
+
+		h1, h2 {
+			color: #333;
+			font-weight: normal;
+			text-align: center;
+		}
+
+		p {
+			color: #666;
+			line-height: 1.5;
+			margin-top: 0;
+		}
+
+		footer {
+			background-color: #333;
+			color: #FFF;
+			padding: 20px;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Welcome to my website</h1>
+	</header>
+	<nav>
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Contact</a>
+	</nav>
+	<section>
+		<article>
+			<h2>Article 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis consequat libero, vitae ullamcorper est. Maecenas ut felis at est bibendum hendrerit. </p>
+		</article>
+		<article>
+			<h2>Article 2</h2>
+			<p>Sed eget ipsum ac diam posuere lobortis. Integer sit amet elit id erat euismod dapibus vitae ut lectus. Fusce gravida augue orci, vel convallis tortor lobortis id. </p>
+		</article>
+		<article>
+			<h2>Article 3</h2>
+			<p>Vivamus dapibus purus ex, vel egestas nulla fringilla ac. Praesent vel malesuada nibh, at luctus nisi. Nullam non nulla ultrices, blandit nunc eu, tincidunt quam. </p>
+		</article>
+	</section>
+	<footer>
+		<p>Copyright © 2023</p>
+	</footer>
+</body>
+</html>
+
+
 import easyocr as ocr  #OCR
 import streamlit as st  #Web App
 from PIL import Image #Image Processing
