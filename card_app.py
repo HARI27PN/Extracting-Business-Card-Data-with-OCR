@@ -28,11 +28,12 @@ set_background()
 st.title(":lime[BizCard: Extracting Business Card Data]") 
 st.write(" ")
 
-col1, col2, col3 = st.columns([3, 0.5, 4.5])
-
+col1, col2,col3= st.columns([3,0.5,4.5])
 with col1:
-    st.markdown("<div style='background-color: white; padding: 20px; border-radius: 10px;'><h2><span style='background-color: #32D7AC; color: #00008B; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #32D7AC;'>⬇️</span></h2></div>", unsafe_allow_html=True)
-    image = st.file_uploader(label="", type=['png', 'jpg', 'jpeg'], key="uploader")
+    #image uploader
+    
+    st.markdown("<h2><span style='background-color: #32D7AC; color: #00008B; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #32D7AC;'>⬇️</span></h2>", unsafe_allow_html=True)
+    image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
 @st.cache
 def load_model(): 
