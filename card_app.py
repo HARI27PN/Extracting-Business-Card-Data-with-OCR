@@ -28,21 +28,6 @@ set_background()
 st.title(":lime[BizCard: Extracting Business Card Data]") 
 st.write(" ")
 
-# Custom CSS to change background color of drag and drop box
-st.markdown("""
-    <style>
-        input[type=file]::-webkit-file-upload-button {
-            background-color: #FFFFE0;
-        }
-        .stFileUploader {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            background-color: white;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 col1, col2, col3 = st.columns([3, 0.5, 4.5])
 
 with col1:
