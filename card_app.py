@@ -1,8 +1,11 @@
+User
 import easyocr as ocr  #OCR
 import streamlit as st  #Web App
 from PIL import Image #Image Processing
 import numpy as np #Image Processing 
-st.set_page_config(layout="wide")
+st. set_page_config(layout="wide")
+import re
+import pandas as pd
 
 # Set the background color
 def set_background():
@@ -13,11 +16,6 @@ def set_background():
         .stApp {
             background-color: #FFC0CB;
             color: black;
-        }
-        .container {
-            background-color: white;
-            border: 2px solid black;
-            padding: 10px;
         }
         </style>
         """,
@@ -31,26 +29,26 @@ set_background()
 st.title(":lime[BizCard: Extracting Business Card Data]") 
 st.write(" ")
 
-# Define a container for the image uploader
-with st.container():
-    # Add a heading for the image uploader
+col1, col2,col3= st.columns([3,0.5,4.5])
+with col1:
+    #image uploader
+    
     st.markdown("<h2><span style='background-color: #32D7AC; color: #00008B; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #32D7AC;'>⬇️</span></h2>", unsafe_allow_html=True)
-    # Add a file uploader
-    image = st.file_uploader(label="", type=['png', 'jpg', 'jpeg'])
-    # Add an image preview
-    if image is not None:
-        input_image = Image.open(image)
-        st.image(input_image, use_column_width=True)
+    image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
-# Load the OCR model
 @st.cache
 def load_model(): 
-    reader = ocr.Reader(['en'])
+    reader = ocr.Reader(['en'])#,model_storage_directory='.')
     return reader 
 
-reader = load_model()
+reader = load_model() #load model
 
 if image is not None:
+    input_image = Image.open(image) #read image
+    with col1:
+        #st.write("## YOUR IMAGE")
+        st.image(input_image) #display image        
+    
     result = reader.readtext(np.array(input_image))
     result_text = [] #empty list for results
     for text in result:
@@ -67,9 +65,8 @@ if image is not None:
     WEB=''
     WID=''
     
-    for i, string in enumerate(result_text):
-        #st.write(string.lower()) 
-        pass # Replace this line with your code to extract data from the OCR result     
+    for i, string in enumerate(result_text):   
+        #st.write(string.lower())   
         
         # TO FIND EMAIL
         if re.search(r'@', string.lower()):
