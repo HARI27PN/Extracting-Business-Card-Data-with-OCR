@@ -129,13 +129,13 @@ if image is not None:
     with col3: 
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
         st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-        st.write('##### :red[WEBSITE URL: ] '+ str(WEB))
-        st.write('##### :red[EMAIL ADDRESS: ] '+ str(EMAIL)) 
-        st.write('##### :red[PIN CODE: ] '+ str(PIN)) 
+        st.write('##### :white[WEBSITE URL: ] '+ str(WEB))
+        st.write('##### :white[EMAIL ADDRESS: ] '+ str(EMAIL)) 
+        st.write('##### :white[PIN CODE: ] '+ str(PIN)) 
         ph_str = ', '.join(PH)
-        st.write('##### :red[PHONE NUMBER(S): ] '+ph_str)
+        st.write('##### :white[PHONE NUMBER(S): ] '+ph_str)
         add_str = ' '.join([str(elem) for elem in ADD])
-        st.write('##### :red[ADDRESS: ] ', add_str)
+        st.write('##### :white[ADDRESS: ] ', add_str)
 
         IDS= [EID,PID,WID]
         IDS.extend(AID)
