@@ -128,7 +128,7 @@ if image is not None:
             WID=i 
     with col3: 
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
-        st.markdown("<h2><span style='background-color: #00008B; color: #32D7AC; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
+        st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
         st.write('##### :red[WEBSITE URL: ] '+ str(WEB))
         st.write('##### :red[EMAIL ADDRESS: ] '+ str(EMAIL)) 
         st.write('##### :red[PIN CODE: ] '+ str(PIN)) 
