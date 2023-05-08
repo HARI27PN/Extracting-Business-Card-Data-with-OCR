@@ -31,8 +31,8 @@ st.write(" ")
 # Custom CSS to change background color of drag and drop box
 st.markdown("""
     <style>
-        div[data-baseweb="file-uploader"] {
-            background-color: #FFFFE0 !important;
+        input[type=file]::-webkit-file-upload-button {
+            background-color: #FFFFE0;
         }
     </style>
 """, unsafe_allow_html=True)
