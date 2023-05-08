@@ -6,6 +6,24 @@ st. set_page_config(layout="wide")
 import re
 import pandas as pd
 
+# Set the background color
+def set_background():
+    # Add CSS to change the background color
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-color: #e6e6e6;
+            color: black;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Call the function to set the background color
+set_background()
+
 #title
 st.title(":orange[BizCard-Extracting-Business-Card-Data]") 
 st.write(" ")
