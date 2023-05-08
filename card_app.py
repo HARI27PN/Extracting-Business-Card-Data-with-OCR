@@ -30,7 +30,7 @@ st.write(" ")
 col1, col2,col3= st.columns([3,0.5,4.5])
 with col1:
     #image uploader
-    st.write("## UPLOAD IMAGE ⬇️")
+    st.write("## UPLOAD IMAGE \u2193")
     image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
 @st.cache
