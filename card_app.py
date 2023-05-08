@@ -29,7 +29,7 @@ st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; ba
 
 st.write(" ")
 
-col1, col2,col3= st.columns([3.25,1.25,3.75])
+col1, col2,col3= st.columns([3.25,1.5,3.5])
 with col1:
     #image uploader
     
