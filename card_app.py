@@ -127,9 +127,9 @@ if image is not None:
             WID=i 
     with col3: 
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
-        st.write("## EXTRACTED TEXT")
+        st.write("## EXTRACTED DATA")
         st.write('##### :red[WEBSITE URL: ] '+ str(WEB))
-        st.write('##### :red[EMAIL: ] '+ str(EMAIL)) 
+        st.write('##### :red[EMAIL ADDRESS: ] '+ str(EMAIL)) 
         st.write('##### :red[PIN CODE: ] '+ str(PIN)) 
         ph_str = ', '.join(PH)
         st.write('##### :red[PHONE NUMBER(S): ] '+ph_str)
