@@ -24,7 +24,7 @@ def set_background():
 # Call the function to set the background color
 set_background()
 
-down_arrow = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixlok.com%2Ficons%2Fdown-arrow-svg-icon-free-download%2F&psig=AOvVaw1wbNN7ikyOvt_zwh5C_fq7&ust=1683638200900000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIixn5rn5f4CFQAAAAAdAAAAABAE"
+down_arrow = "https://upload.wikimedia.org/wikipedia/commons/8/84/Eo_circle_green_arrow-down.svg"
 st.write("## UPLOAD IMAGE ", st.image(down_arrow, use_column_width=True))
 
 #title
