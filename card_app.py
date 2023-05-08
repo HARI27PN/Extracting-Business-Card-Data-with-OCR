@@ -25,7 +25,7 @@ def set_background():
 set_background()
 
 #title
-st.markdown("<h1 style='text-align: center; font-weight: bold; color: #FFA07A ; background-color:#800080;'>BizCard: Extracting Business Card Data</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data</h1>", unsafe_allow_html=True)
 
 st.write(" ")
 
