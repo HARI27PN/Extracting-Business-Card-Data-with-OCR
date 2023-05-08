@@ -24,16 +24,13 @@ def set_background():
 # Call the function to set the background color
 set_background()
 
-down_arrow = "https://upload.wikimedia.org/wikipedia/commons/8/84/Eo_circle_green_arrow-down.svg"
-st.write("## UPLOAD IMAGE ", st.image(down_arrow, use_column_width=True))
-
 #title
 st.title(":red[BizCard: Extracting Business Card Data]") 
 st.write(" ")
 col1, col2,col3= st.columns([3,0.5,4.5])
 with col1:
     #image uploader
-    st.write("## UPLOAD IMAGE \u2193")
+    st.write("## UPLOAD IMAGE ⬇️")
     image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
 @st.cache
