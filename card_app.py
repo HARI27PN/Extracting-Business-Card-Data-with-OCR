@@ -127,25 +127,20 @@ if image is not None:
             WEB=string.lower()
             WID=i 
     with col3: 
-        import streamlit as st
-
-        # Create a sidebar on the right side of the screen
-        st.sidebar.title("Business Card")
-
-        # Display all the elements of the business card in the sidebar
-        st.sidebar.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-        st.sidebar.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
-        st.sidebar.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
+        # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
+        st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
         ph_str = ', '.join(PH)
-        st.sidebar.markdown('#### <span style="color: red;">PHONE NUMBER(S): </span>' + ph_str, unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">PHONE NUMBER(S): </span>' + ph_str, unsafe_allow_html=True)
         add_str = ' '.join([str(elem) for elem in ADD])
-        st.sidebar.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
-        st.sidebar.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
 
         IDS= [EID,PID,WID]
         IDS.extend(AID)
         IDS.extend(PHID)
-        # st.write(IDS)
+#         st.write(IDS)
         oth=''                               
         fin=[]                        
         for i, string in enumerate(result_text):
@@ -155,6 +150,6 @@ if image is not None:
                         numbers = re.findall('\d+', string)
                         if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
                             fin.append(string)
-        st.sidebar.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
         for i in fin:
-            st.sidebar.write('##### '+i)
+            st.write('##### '+i)
