@@ -131,12 +131,11 @@ if image is not None:
         st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
         st.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
         st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
-        st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
         ph_str = ', '.join(PH)
         st.markdown('#### <span style="color: red;">PHONE NUMBER(S): </span>' + ph_str, unsafe_allow_html=True)
         add_str = ' '.join([str(elem) for elem in ADD])
         st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
-
+        st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
 
         IDS= [EID,PID,WID]
         IDS.extend(AID)
