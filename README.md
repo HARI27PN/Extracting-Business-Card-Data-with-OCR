@@ -2,7 +2,7 @@
 
 Streamlit App Link ⬇️
 
-link will be posted soon
+https://hari27pn-extracting-business-card-data-with-ocr-card-app-tt3751.streamlit.app/
 
 Refer to the guidelines for the project ⬇️
 
