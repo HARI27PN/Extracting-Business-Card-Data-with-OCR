@@ -25,7 +25,7 @@ def set_background():
 set_background()
 
 #title
-st.title(":lime[BizCard: Extracting Business Card Data]") 
+st.markdown("<h1 style='text-align: center; font-weight: bold;'>BizCard: Extracting Business Card Data</h1>", unsafe_allow_html=True)
 st.write(" ")
 
 col1, col2,col3= st.columns([3,0.5,4.5])
