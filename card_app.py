@@ -129,14 +129,14 @@ if image is not None:
     with col3: 
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
         st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-        st.write('##### :white[CARD HOLDER & COMPANY DETAILS: ] ')
-        st.write('##### :white[WEBSITE URL: ] '+ str(WEB))
-        st.write('##### :white[EMAIL ADDRESS: ] '+ str(EMAIL)) 
-        st.write('##### :white[PIN CODE: ] '+ str(PIN)) 
+        st.markdown('##### <span style="color: white;">CARD HOLDER & COMPANY DETAILS: </span>', unsafe_allow_html=True)
+        st.markdown('##### <span style="color: white;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
+        st.markdown('##### <span style="color: white;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
+        st.markdown('##### <span style="color: white;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
         ph_str = ', '.join(PH)
-        st.write('##### :white[PHONE NUMBER(S): ] '+ph_str)
+        st.markdown('##### <span style="color: white;">PHONE NUMBER(S): </span>' + ph_str, unsafe_allow_html=True)
         add_str = ' '.join([str(elem) for elem in ADD])
-        st.write('##### :white[ADDRESS: ] ', add_str)
+        st.markdown('##### <span style="color: white;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
 
 
         IDS= [EID,PID,WID]
