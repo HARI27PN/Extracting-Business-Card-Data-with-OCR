@@ -129,13 +129,13 @@ if image is not None:
     with col3: 
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
         st.markdown("<h2><span style='background-color: #32D7AC; color:#00008B ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-        st.write('##### :red[WEBSITE URL: ] '+ str(WEB))
-        st.write('##### :red[EMAIL ADDRESS: ] '+ str(EMAIL)) 
-        st.write('##### :red[PIN CODE: ] '+ str(PIN)) 
+        st.write('##### <span style="color:white;">WEBSITE URL: </span>' + str(WEB))
+        st.write('##### <span style="color:white;">EMAIL ADDRESS: </span>' + str(EMAIL))
+        st.write('##### <span style="color:white;">PIN CODE: </span>' + str(PIN))
         ph_str = ', '.join(PH)
-        st.write('##### :red[PHONE NUMBER(S): ] '+ph_str)
+        st.write('##### <span style="color:white;">PHONE NUMBER(S): </span>' + ph_str)
         add_str = ' '.join([str(elem) for elem in ADD])
-        st.write('##### :red[ADDRESS: ] ', add_str)
+        st.write('##### <span style="color:white;">ADDRESS: </span>', add_str)
 
         IDS= [EID,PID,WID]
         IDS.extend(AID)
@@ -150,7 +150,7 @@ if image is not None:
                         numbers = re.findall('\d+', string)
                         if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
                             fin.append(string)
-        st.write('##### :white[CARD HOLDER & COMPANY DETAILS: ] ')
+        st.markdown("<h4 style='color:white;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
         for i in fin:
             st.write('##### '+i)
             
