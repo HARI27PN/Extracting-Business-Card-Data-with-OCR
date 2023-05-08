@@ -34,15 +34,20 @@ st.markdown("""
         input[type=file]::-webkit-file-upload-button {
             background-color: #FFFFE0;
         }
+        .stFileUploader {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-col1, col2,col3= st.columns([3,0.5,4.5])
+col1, col2, col3 = st.columns([3, 0.5, 4.5])
+
 with col1:
-    #image uploader
-    
-    st.markdown("<h2><span style='background-color: #32D7AC; color: #00008B; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #32D7AC;'>⬇️</span></h2>", unsafe_allow_html=True)
-    image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
+    st.markdown("<div style='background-color: white; padding: 20px; border-radius: 10px;'><h2><span style='background-color: #32D7AC; color: #00008B; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #32D7AC;'>⬇️</span></h2></div>", unsafe_allow_html=True)
+    image = st.file_uploader(label="", type=['png', 'jpg', 'jpeg'], key="uploader")
 
 @st.cache
 def load_model(): 
