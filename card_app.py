@@ -25,7 +25,7 @@ def set_background():
 set_background()
 
 #title
-st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data <img src='https://www.flaticon.com/free-icon/business-card_262239?term=business+card&page=1&position=9&origin=tag&related_id=262239' alt='Business card' style='vertical-align:middle; margin-left:10px;'></h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data <img src='https://www.flaticon.com/free-icon/business-card_262239?term=business+card&page=1&position=9&origin=tag&related_id=262239' alt='Business card' style='vertical-align:right; margin-left:10px;'></h1>", unsafe_allow_html=True)
 
 st.write(" ")
 
