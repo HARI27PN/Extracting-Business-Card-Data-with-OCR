@@ -33,7 +33,7 @@ col1, col2,col3= st.columns([3.25,1.5,3.5])
 with col1:
     #image uploader
     
-    st.markdown("<h2><span style='background-color: #1a75ff; color: #ffffff; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #ff3300;'>⬇️</span></h2>", unsafe_allow_html=True)
+    st.markdown("<h2><span style='background-color: #00008B; color: #ffffff; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #ff3300;'>⬇️</span></h2>", unsafe_allow_html=True)
     image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
 @st.cache
