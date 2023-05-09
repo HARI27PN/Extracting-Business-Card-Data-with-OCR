@@ -29,7 +29,7 @@ icon = "https://cdn-icons-png.flaticon.com/512/262/262239.png"
 
 st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data </h1>", unsafe_allow_html=True)
 
-st.image(icon, width="20%")
+st.image(icon, width="10%")
 st.write(" ")
 
 col1, col2,col3= st.columns([3.25,1.5,3.5])
