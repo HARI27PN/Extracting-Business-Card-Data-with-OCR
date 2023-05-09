@@ -152,4 +152,4 @@ if image is not None:
                             fin.append(string)
         st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
         for i in fin:
-            st.write('#### '+i)
+            st.write('#### '+i,end = ',')
