@@ -25,7 +25,7 @@ def set_background():
 set_background()
 
 #title
-icon = "https://image.flaticon.com/icons/png/512/2622/2622059.png"
+icon = "https://cdn-icons-png.flaticon.com/512/262/262239.png"
 
 st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data </h1>", unsafe_allow_html=True)
 
