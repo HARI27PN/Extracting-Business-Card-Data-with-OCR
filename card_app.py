@@ -13,7 +13,7 @@ def set_background():
         """
         <style>
         .stApp {
-            background-color: #00e68a;
+            background-color: #c2d6d6;
             color: black;
         }
         </style>
