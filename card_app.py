@@ -126,32 +126,34 @@ if image is not None:
             WEB=string.lower()
             WID=i 
 with col3:
-    # CREATE CONTAINER BOX
-        st.markdown("""
-            <div style='
-                display: flex; 
-                justify-content: center; 
-                align-items: center; 
-                height: 400px; 
-                width: 800px; 
-                background-color: #FFFFFF; 
-                border-radius: 10px; 
-                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); 
-                margin-top: 20px; 
-                margin-bottom: 20px; 
-                padding: 20px;
-            '>
-                <div style='width: 100%;'>
-                    <h2 style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>
-                        EXTRACTED DATA
-                    </h2>
-                    <h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>
-                    <p>{}</p>
-                    <p>EMAIL ADDRESS: {}</p>
-                    <p>PHONE NUMBER(s): {}</p>
-                    <p>WEBSITE URL: {}</p>
-                    <p>ADDRESS: {}</p>
-                    <p>PIN CODE: {}</p>
-                </div>
-            </div>
-        """.format(i_values, EMAIL, ph_str, WEB, add_str, PIN), unsafe_allow_html=True)
+    with st.container():
+        # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
+        st.markdown("<h2><span style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
+
+        IDS= [EID,PID,WID]
+        IDS.extend(AID)
+        IDS.extend(PHID)
+        # st.write(IDS)
+        oth=''                               
+        fin=[]                        
+        for i, string in enumerate(result_text):
+            if i not in IDS:
+                if len(string) >= 4 and ',' not in string and '.' not in string and 'www.' not in string:
+                    if not re.match("^[0-9]{0,3}$", string) and not re.match("^[^a-zA-Z0-9]+$", string):
+                        numbers = re.findall('\d+', string)
+                        if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
+                            fin.append(string)
+        st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
+        # Collect all the strings in fin list and join them using comma separator
+        i_values = ', '.join(fin)
+
+        # Write the i_values to the Streamlit app
+        st.write('#### ' + i_values)
+
+        st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
+        ph_str = ', '.join(PH)
+        st.markdown('#### <span style="color: red;">PHONE NUMBER(s): </span>' + ph_str, unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
+        add_str = ' '.join([str(elem) for elem in ADD])
+        st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
+        st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
