@@ -20,6 +20,7 @@ def set_background():
         """,
         unsafe_allow_html=True
     )
+
 # Call the function to set the background color
 set_background()
 
@@ -27,10 +28,10 @@ set_background()
 st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data </h1>", unsafe_allow_html=True)
 st.write(" ")
 
-# creating columns
 col1, col2,col3= st.columns([3.25,1.5,3.5])
 with col1:
     #image uploader
+    
     st.markdown("<h2><span style='background-color: #00008B; color: #ffffff; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #ff3300;'>⬇️</span></h2>", unsafe_allow_html=True)
     image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
@@ -85,13 +86,14 @@ if image is not None:
             PH.append(string)
             PHID.append(i)
 
+
+            
         # TO FIND ADDRESS 
         keywords = ['road', 'floor', ' st ', 'st,', 'street', ' dt ', 'district',
                     'near', 'beside', 'opposite', ' at ', ' in ', 'center', 'main road',
                    'state','country', 'post','zip','city','zone','mandal','town','rural',
                     'circle','next to','across from','area','building','towers','village',
                     ' ST ',' VA ',' VA,',' EAST ',' WEST ',' NORTH ',' SOUTH ']
-        
         # Define the regular expression pattern to match six or seven continuous digits
         digit_pattern = r'\d{6,7}'
         # Check if the string contains any of the keywords or a sequence of six or seven digits
@@ -123,36 +125,35 @@ if image is not None:
         if re.match(r"(?!.*@)(www|.*com$)", string):
             WEB=string.lower()
             WID=i 
-            
-with col3:
-        # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
-        st.markdown("<h2><span style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-        IDS= [EID,PID,WID]
-        IDS.extend(AID)
-        IDS.extend(PHID)
-        
-        # st.write(IDS)
-        oth=''                               
-        fin=[]                        
-        for i, string in enumerate(result_text):
-            if i not in IDS:
-                if len(string) >= 4 and ',' not in string and '.' not in string and 'www.' not in string:
-                    if not re.match("^[0-9]{0,3}$", string) and not re.match("^[^a-zA-Z0-9]+$", string):
-                        numbers = re.findall('\d+', string)
-                        if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
-                            fin.append(string)
-        st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
-        # Collect all the strings in fin list and join them using comma separator
-        i_values = ', '.join(fin)
-        # Write the i_values to the Streamlit app
-        st.write('#### ' + i_values)
+    with col3:
+        with st.container():
+            # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
+            st.markdown("<h2><span style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
 
-        st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
-        ph_str = ', '.join(PH)
-        st.markdown('#### <span style="color: red;">PHONE NUMBER(s): </span>' + ph_str, unsafe_allow_html=True)
-        st.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
-        add_str = ' '.join([str(elem) for elem in ADD])
-        st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
-        st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
-        st.markdown("<style> .stContainer {background-color: #ffffff; border: 1px solid #000000;} </style>", unsafe_allow_html=True)
-        st.markdown("<style> .stContainer {height: 300px;} </style>", unsafe_allow_html=True)
+            IDS= [EID,PID,WID]
+            IDS.extend(AID)
+            IDS.extend(PHID)
+            # st.write(IDS)
+            oth=''                               
+            fin=[]                        
+            for i, string in enumerate(result_text):
+                if i not in IDS:
+                    if len(string) >= 4 and ',' not in string and '.' not in string and 'www.' not in string:
+                        if not re.match("^[0-9]{0,3}$", string) and not re.match("^[^a-zA-Z0-9]+$", string):
+                            numbers = re.findall('\d+', string)
+                            if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
+                                fin.append(string)
+            st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
+            # Collect all the strings in fin list and join them using comma separator
+            i_values = ', '.join(fin)
+
+            # Write the i_values to the Streamlit app
+            st.write('#### ' + i_values)
+
+            st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
+            ph_str = ', '.join(PH)
+            st.markdown('#### <span style="color: red;">PHONE NUMBER(s): </span>' + ph_str, unsafe_allow_html=True)
+            st.markdown('#### <span style="color: red;">WEBSITE URL: </span>' + str(WEB), unsafe_allow_html=True)
+            add_str = ' '.join([str(elem) for elem in ADD])
+            st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
+            st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
