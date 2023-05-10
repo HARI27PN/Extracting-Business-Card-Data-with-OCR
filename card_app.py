@@ -125,7 +125,7 @@ if image is not None:
         if re.match(r"(?!.*@)(www|.*com$)", string):
             WEB=string.lower()
             WID=i 
-   with col3:
+with col3:
     # CREATE CONTAINER BOX
         st.markdown("""
             <div style='
