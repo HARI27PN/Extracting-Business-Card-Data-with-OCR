@@ -157,3 +157,5 @@ with col3:
         add_str = ' '.join([str(elem) for elem in ADD])
         st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
         st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
+        st.markdown("<style> .stContainer {background-color: #ffffff; border: 1px solid #000000;} </style>", unsafe_allow_html=True)
+        st.markdown("<style> .stContainer {height: 300px;} </style>", unsafe_allow_html=True)
