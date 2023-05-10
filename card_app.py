@@ -28,10 +28,10 @@ set_background()
 st.markdown("<h1 style='text-align: center; font-weight: bold; color: white ; background-color:#800080;'>BizCard: Extracting Business Card Data </h1>", unsafe_allow_html=True)
 st.write(" ")
 
+# creating columns
 col1, col2,col3= st.columns([3.25,1.5,3.5])
 with col1:
     #image uploader
-    
     st.markdown("<h2><span style='background-color: #00008B; color: #ffffff; font-weight: bold;'>UPLOAD IMAGE</span> <span style='background-color: #ff3300;'>⬇️</span></h2>", unsafe_allow_html=True)
     image = st.file_uploader(label = "",type=['png','jpg','jpeg'])
 
@@ -86,14 +86,13 @@ if image is not None:
             PH.append(string)
             PHID.append(i)
 
-
-            
         # TO FIND ADDRESS 
         keywords = ['road', 'floor', ' st ', 'st,', 'street', ' dt ', 'district',
                     'near', 'beside', 'opposite', ' at ', ' in ', 'center', 'main road',
                    'state','country', 'post','zip','city','zone','mandal','town','rural',
                     'circle','next to','across from','area','building','towers','village',
                     ' ST ',' VA ',' VA,',' EAST ',' WEST ',' NORTH ',' SOUTH ']
+        
         # Define the regular expression pattern to match six or seven continuous digits
         digit_pattern = r'\d{6,7}'
         # Check if the string contains any of the keywords or a sequence of six or seven digits
@@ -125,13 +124,14 @@ if image is not None:
         if re.match(r"(?!.*@)(www|.*com$)", string):
             WEB=string.lower()
             WID=i 
+            
 with col3:
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
         st.markdown("<h2><span style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
-
         IDS= [EID,PID,WID]
         IDS.extend(AID)
         IDS.extend(PHID)
+        
         # st.write(IDS)
         oth=''                               
         fin=[]                        
@@ -145,7 +145,6 @@ with col3:
         st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
         # Collect all the strings in fin list and join them using comma separator
         i_values = ', '.join(fin)
-
         # Write the i_values to the Streamlit app
         st.write('#### ' + i_values)
 
