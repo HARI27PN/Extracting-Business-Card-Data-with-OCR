@@ -127,31 +127,31 @@ if image is not None:
             WID=i 
    with col3:
     # CREATE CONTAINER BOX
-    st.markdown("""
-        <div style='
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 400px; 
-            width: 800px; 
-            background-color: #FFFFFF; 
-            border-radius: 10px; 
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); 
-            margin-top: 20px; 
-            margin-bottom: 20px; 
-            padding: 20px;
-        '>
-            <div style='width: 100%;'>
-                <h2 style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>
-                    EXTRACTED DATA
-                </h2>
-                <h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>
-                <p>{}</p>
-                <p>EMAIL ADDRESS: {}</p>
-                <p>PHONE NUMBER(s): {}</p>
-                <p>WEBSITE URL: {}</p>
-                <p>ADDRESS: {}</p>
-                <p>PIN CODE: {}</p>
+        st.markdown("""
+            <div style='
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                height: 400px; 
+                width: 800px; 
+                background-color: #FFFFFF; 
+                border-radius: 10px; 
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); 
+                margin-top: 20px; 
+                margin-bottom: 20px; 
+                padding: 20px;
+            '>
+                <div style='width: 100%;'>
+                    <h2 style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>
+                        EXTRACTED DATA
+                    </h2>
+                    <h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>
+                    <p>{}</p>
+                    <p>EMAIL ADDRESS: {}</p>
+                    <p>PHONE NUMBER(s): {}</p>
+                    <p>WEBSITE URL: {}</p>
+                    <p>ADDRESS: {}</p>
+                    <p>PIN CODE: {}</p>
+                </div>
             </div>
-        </div>
-    """.format(i_values, EMAIL, ph_str, WEB, add_str, PIN), unsafe_allow_html=True)
+        """.format(i_values, EMAIL, ph_str, WEB, add_str, PIN), unsafe_allow_html=True)
