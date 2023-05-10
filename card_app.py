@@ -126,7 +126,6 @@ if image is not None:
             WEB=string.lower()
             WID=i 
 with col3:
-    with st.container():
         # DISPLAY ALL THE ELEMENTS OF BUSINESS CARD 
         st.markdown("<h2><span style='background-color: #00008B; color:#ffffff ; font-weight: bold;'>EXTRACTED DATA</span></h2>", unsafe_allow_html=True)
 
