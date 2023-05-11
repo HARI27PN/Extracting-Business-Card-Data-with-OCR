@@ -134,10 +134,10 @@ if image is not None:
                         numbers = re.findall('\d+', string)
                         if len(numbers) == 0 or all(len(num) < 3 for num in numbers) and not any(num in string for num in ['0','1','2','3','4','5','6','7','8','9']*3):
                             fin.append(string)
+                            
         st.markdown("<h4 style='color:red;'>CARD HOLDER & COMPANY DETAILS:</h4>", unsafe_allow_html=True)
         # Collect all the strings in fin list and join them using comma separator
         i_values = ', '.join(fin)
-
         # Write the i_values to the Streamlit app
         st.write('#### ' + i_values)
 
