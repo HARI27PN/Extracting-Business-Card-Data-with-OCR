@@ -35,7 +35,7 @@ with col1:
 
 @st.cache
 def load_model(): 
-    reader = ocr.Reader(['en'])#,model_storage_directory='.')
+    reader = ocr.Reader(['en'])
     return reader 
 reader = load_model() #load model
 
@@ -75,9 +75,7 @@ if image is not None:
             PIN=match.group()
             PID=i
                        
-        # TO FIND PHONE NUMBER    
-        # match = re.search(r'(?:ph|phone|phno)?(?:[+-]?\d*){7,}', string)
-        #match = re.search(r'(?:ph|phone|phno)?\s*(?:[+-]?\d\s*){7,}', string)
+        # TO FIND PHONE NUMBER
         match = re.search(r'(?:ph|phone|phno)?\s*(?:[+-]?\d\s*[\(\)]*){7,}', string)
         if match and len(re.findall(r'\d', string)) > 7:
             PH.append(string)
@@ -128,8 +126,7 @@ if image is not None:
             IDS= [EID,PID,WID]
             IDS.extend(AID)
             IDS.extend(PHID)
-            # st.write(IDS)
-            oth=''                               
+                                          
             fin=[]                        
             for i, string in enumerate(result_text):
                 if i not in IDS:
