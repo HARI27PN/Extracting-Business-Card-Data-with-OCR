@@ -139,7 +139,7 @@ if image is not None:
         i_values = ', '.join(fin)
 
         # Write the i_values to the Streamlit app
-        st.write('#### ' + i_values)
+        # st.write('#### ' + i_values)
 
         st.markdown('#### <span style="color: red;">EMAIL ADDRESS: </span>' + str(EMAIL), unsafe_allow_html=True)
         ph_str = ', '.join(PH)
