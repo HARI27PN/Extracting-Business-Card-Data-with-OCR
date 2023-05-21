@@ -150,31 +150,31 @@ if image is not None:
         st.markdown('#### <span style="color: red;">ADDRESS: </span>' + add_str, unsafe_allow_html=True)
         st.markdown('#### <span style="color: red;">PIN CODE: </span>' + str(PIN), unsafe_allow_html=True)
 
-# Downloading the text format
-def generate_download_text():
-    output = StringIO()
+        # Downloading the text format
+        def generate_download_text():
+        output = StringIO()
     
-    # Write the extracted information to the output string
-    output.write("CARD HOLDER & COMPANY DETAILS:\n")
-    output.write(', '.join(fin))
-    output.write('\n\n')
-    output.write("EMAIL ADDRESS: " + str(EMAIL) + '\n')
-    output.write("PHONE NUMBER(s): " + ', '.join(PH) + '\n')
-    output.write("WEBSITE URL: " + str(WEB) + '\n')
-    output.write("ADDRESS: " + ', '.join(ADD) + '\n')
-    output.write("PIN CODE: " + str(PIN) + '\n')
+        # Write the extracted information to the output string
+        output.write("CARD HOLDER & COMPANY DETAILS:\n")
+        output.write(', '.join(fin))
+        output.write('\n\n')
+        output.write("EMAIL ADDRESS: " + str(EMAIL) + '\n')
+        output.write("PHONE NUMBER(s): " + ', '.join(PH) + '\n')
+        output.write("WEBSITE URL: " + str(WEB) + '\n')
+        output.write("ADDRESS: " + ', '.join(ADD) + '\n')
+        output.write("PIN CODE: " + str(PIN) + '\n')
 
-    # Get the content of the output string
-    content = output.getvalue()
-    # Close the output string
-    output.close()
-    return content
+        # Get the content of the output string
+        content = output.getvalue()
+        # Close the output string
+        output.close()
+        return content
 
-# Create a download button
-download_text = generate_download_text()
-st.download_button(
-    label='Download Extracted Information',
-    data=download_text.encode('utf-8'),
-    file_name='extracted_info.txt',
-    mime='text/plain'
-)   
+        # Create a download button
+        download_text = generate_download_text()
+        st.download_button(
+        label='Download Extracted Information',
+        data=download_text.encode('utf-8'),
+        file_name='extracted_info.txt',
+        mime='text/plain'
+        )   
